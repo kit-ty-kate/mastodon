@@ -8,10 +8,10 @@ class AccountFilter
   end
 
   def results
-    scope = Account.recent
+    scope = Account.recent.includes(:user)
 
     params.each do |key, value|
-      scope.merge!(scope_for(key, value)) if value.present?
+      scope.merge!(scope_for(key, value.strip)) if value.present?
     end
 
     scope
@@ -43,7 +43,7 @@ class AccountFilter
       if valid_ip?(value)
         accounts_with_users.merge User.with_recent_ip_address(value)
       else
-        Account.default_scoped
+        Account.none
       end
     when 'staff'
       accounts_with_users.merge User.staff
