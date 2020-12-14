@@ -128,7 +128,7 @@
     "uws": "10.148.0",
     "webpack": "^4.18.0",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "^3.0.8",
+    "webpack-cli": "^4.2.0",
     "webpack-manifest-plugin": "^2.0.4",
     "webpack-merge": "^4.1.3",
     "websocket.js": "^0.1.12"
